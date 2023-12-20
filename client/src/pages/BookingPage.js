@@ -19,7 +19,7 @@ function BookingPage() {
   const getUserData = async () => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/getDoctorById",
+        `${window.location.origin}/api/v1/doctor/getDoctorById`,
         {
           doctorId: params.doctorId,
         },
@@ -41,7 +41,7 @@ function BookingPage() {
     try {
       dispatch(showLoading);
       const res = await axios.post(
-        "/api/v1/user/booking-availability",
+        `${window.location.origin}/api/v1/user/booking-availability`,
         {
           doctorId: params.doctorId,
           date: date,
@@ -78,7 +78,7 @@ function BookingPage() {
       }
       dispatch(showLoading);
       const res = await axios.post(
-        "/api/v1/user/book-appointment",
+        `${window.location.origin}/api/v1/user/book-appointment`,
         {
           doctorId: params.doctorId,
           userId: user._id,

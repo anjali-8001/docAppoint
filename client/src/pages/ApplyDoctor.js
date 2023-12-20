@@ -18,7 +18,7 @@ function ApplyDoctor() {
     try {
       dispatch(showLoading);
       const res = await axios.post(
-        "/api/v1/user/apply-doctor",
+        `${window.location.origin}/api/v1/user/apply-doctor`,
         {
           ...values,
           userId: user._id,

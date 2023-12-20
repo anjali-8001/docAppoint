@@ -9,7 +9,7 @@ function DoctorAppointments() {
 
   const getAppointments = async () => {
     try {
-      const res = await axios.get("/api/v1/doctor/doctor-appointments", {
+      const res = await axios.get(`${window.location.origin}/api/v1/doctor/doctor-appointments`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -29,7 +29,7 @@ function DoctorAppointments() {
   const handleStatus = async (record, status) => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/updateStatus",
+        `${window.location.origin}/api/v1/doctor/updateStatus`,
         { appointmentId: record._id, status },
         {
           headers: {

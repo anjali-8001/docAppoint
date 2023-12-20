@@ -16,7 +16,7 @@ function NotificationPage() {
     try {
       dispatch(showLoading);
       const res = await axios.post(
-        "/api/v1/user/get-all-notification",
+        `${window.location.origin}/api/v1/user/get-all-notification`,
         {
           userId: user._id,
         },

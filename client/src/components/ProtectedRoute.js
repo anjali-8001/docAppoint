@@ -13,7 +13,7 @@ function ProtectedRoute({ children }) {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/getUserData",
+        `${window.location.origin}/api/v1/user/getUserData`,
         {
           token: localStorage.getItem("token"),
         },
